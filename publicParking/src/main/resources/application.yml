@@ -7,7 +7,11 @@ spring:
     url: 
     username: admin
     password: 
-
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+        
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     open-in-view: false
