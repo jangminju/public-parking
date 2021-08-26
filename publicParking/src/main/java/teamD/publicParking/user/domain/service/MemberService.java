@@ -30,24 +30,24 @@ public class MemberService implements UserDetailsService {
 	@Transactional
 	public Long joinUser(MemberDto memberDto) {
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-		memberDto.setUserPassword(passwordEncoder.encode(memberDto.getUserPassword()));
+		memberDto.setPassword(passwordEncoder.encode(memberDto.getPassword()));
 		
-		return memberRepository.save(memberDto.toEntity()).getId();
+		return memberRepository.save(memberDto.toEntity()).getUser_id();
 	}
 	
 	@Override
-	public UserDetails loadUserByUsername(String userEmail) throws UsernameNotFoundException {
-		Optional<Member> userEntiryWrapper = memberRepository.findByUserEmail(userEmail);
+	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+		Optional<Member> userEntiryWrapper = memberRepository.findByEmail(email);
 		Member member = userEntiryWrapper.get();
 		
 		List<GrantedAuthority> authorities = new ArrayList<>();
 		
-		if(("admin@example.com").equals(userEmail)) {
+		if(("admin@example.com").equals(email)) {
 			authorities.add(new SimpleGrantedAuthority(Role.ADMIN.getValue()));
 		} else {
 			authorities.add(new SimpleGrantedAuthority(Role.MEMBER.getValue()));
 		}
 		
-		return new User(member.getUserEmail(), member.getUserPassword(), authorities);
+		return new User(member.getEmail(), member.getPassword(), authorities);
 	}
 }

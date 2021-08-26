@@ -15,28 +15,26 @@ import lombok.ToString;
 @NoArgsConstructor
 public class MemberDto {
 
-	private Long id;
-	private String userEmail;
-	private String userPassword;
-	private String userNickname;
-	private LocalDateTime createdDate;
-	private LocalDateTime modifideDate;
+	private Long user_id;
+	private String email;
+	private String password;
+	private String nickname;
 	
 	public Member toEntity() {
 		return Member.builder()
-                .id(id)
-                .userEmail(userEmail)
-                .userPassword(userPassword)
-                .userNickname(userNickname)
+                .user_id(user_id)
+                .email(email)
+                .password(password)
+                .nickname(nickname)
                 .build();
 	}
 	
 	@Builder
-	public MemberDto(Long id, String userEmail, String userPassword, String userNickname) {
-		this.id = id;
-		this.userEmail = userEmail;
-		this.userPassword = userPassword;
-		this.userNickname = userNickname;
+	public MemberDto(Long user_id, String email, String password, String nickname) {
+		this.user_id = user_id;
+		this.email = email;
+		this.password = password;
+		this.nickname = nickname;
 				
 	}
 	

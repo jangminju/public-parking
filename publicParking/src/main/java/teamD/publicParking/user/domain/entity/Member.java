@@ -20,23 +20,23 @@ public class Member {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long user_id;
 	
 	@Column(length=20, nullable=false)
-	private String userEmail;
+	private String email;
 	
 	@Column(length = 100, nullable = false)
-	private String userPassword;
+	private String password;
 	
 	@Column(length = 10, nullable = false)
-	private String userNickname;
+	private String nickname;
 	
 	@Builder
-	public Member(Long id, String userEmail, String userPassword, String userNickname) {
-		this.id = id;
-		this.userEmail = userEmail;
-		this.userPassword = userPassword;
-		this.userNickname = userNickname;
+	public Member(Long user_id, String email, String password, String nickname) {
+		this.user_id = user_id;
+		this.email = email;
+		this.password = password;
+		this.nickname = nickname;
 	}
 	
 	
