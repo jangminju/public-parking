@@ -2,6 +2,7 @@ package teamD.publicParking.board.dto;
 
 import java.time.LocalDateTime;
 
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,7 +17,7 @@ import teamD.publicParking.board.Entity.enums.BoardType;
 @NoArgsConstructor
 public class BoardDto { //Controller와 Service사이에서 데이터 주고받기
 	
-	private Long id;
+	private Long board_id;
 	private String nickname;
 	private String title;
 	private String content;
@@ -28,7 +29,7 @@ public class BoardDto { //Controller와 Service사이에서 데이터 주고받�
 	
 	/*public BoardEntity toEntity() {
 		BoardEntity build = BoardEntity.builder()
-				.id(id)
+				.board_id(board_id)
 				.nickname(nickname)
 				.title(title)
 				.content(content)
@@ -39,7 +40,7 @@ public class BoardDto { //Controller와 Service사이에서 데이터 주고받�
 	
 	public BoardEntity toEntity() {
 		BoardEntity boardEntity = BoardEntity.builder()
-				.id(id)
+				.board_id(board_id)
 				.nickname(nickname)
 				.title(title)
 				.content(content)
@@ -49,8 +50,8 @@ public class BoardDto { //Controller와 Service사이에서 데이터 주고받�
    }
 	
 	@Builder
-	public BoardDto(Long id, String nickname, String title, String content, LocalDateTime createdDate, LocalDateTime modifiedDate, BoardType boardType) {
-		this.id = id;
+	public BoardDto(Long board_id, String nickname, String title, String content, LocalDateTime createdDate, LocalDateTime modifiedDate, BoardType boardType) {
+		this.board_id = board_id;
 		this.nickname = nickname;
 		this.title = title;
 		this.content = content;
