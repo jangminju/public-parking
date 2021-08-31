@@ -1,32 +1,21 @@
-server:
-  port: 8082
-
-spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://minyoungdb.c9trnlmukdex.ap-northeast-2.rds.amazonaws.com/teamD
-    username: admin
-    password: yony9796
-
-  mvc:
-    hiddenmethod:
-      filter:
-        enabled: true
-        
-  jpa:
-    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-    open-in-view: false
-    show-sql: true
-    hibernate:
-      format_sql: true
-      ddl-auto: create
-
 logging:
-  level:
-    org:
-      hibernate:
-        SQL: DEBUG
-        type:
-          descriptor:
-            sql:
-              BasicBinder: TRACE
+    level:
+        org:
+            springframework:
+                web:
+                    filter: debug
+server:
+    port: 8087
+spring:
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: lesm1serab1e
+        url: jdbc:mysql://relearn.cqaoehsuwhpj.ap-northeast-2.rds.amazonaws.com:3306/study
+        username: relearn
+    mvc:
+        hiddenmethod:
+            filter:
+                enabled: true
+        view:
+            prefix: /WEB-INF/jsp/
+            suffix: .jsp
