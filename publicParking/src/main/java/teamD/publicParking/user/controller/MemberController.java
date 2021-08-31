@@ -39,12 +39,12 @@ public class MemberController {
         return "/login";
     }
 
-    // 로그인 결과 페이지
+    // 로그인 결과 페이지 -> 메인 이동
     @GetMapping("/user/login/result")
     public String dispLoginResult() {
-        return "/loginSuccess";
+        return "redirect:/index";
     }
-
+    
     // 로그아웃 결과 페이지
     @GetMapping("/user/logout/result")
     public String dispLogout() {
