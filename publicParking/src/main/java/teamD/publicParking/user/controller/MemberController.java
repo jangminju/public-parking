@@ -3,6 +3,7 @@ package teamD.publicParking.user.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import teamD.publicParking.user.domain.service.MemberService;
 import teamD.publicParking.user.dto.MemberDto;
@@ -10,6 +11,7 @@ import lombok.AllArgsConstructor;
 
 @Controller
 @AllArgsConstructor
+@RequestMapping("member")
 public class MemberController {
 	private MemberService memberService;
 	

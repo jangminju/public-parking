@@ -1,18 +1,20 @@
 logging:
-    level:
-        org:
-            springframework:
-                web:
-                    filter: debug
+  level:
+    org:
+      springframework:
+        web:
+          filter: debug
+    teamD:
+      publicParking: debug
+    
 server:
     port: 8087
 spring:
     datasource:
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        password: lesm1serab1e
         url: jdbc:mysql://relearn.cqaoehsuwhpj.ap-northeast-2.rds.amazonaws.com:3306/study
+        driver-class-name: com.mysql.cj.jdbc.Driver
         username: relearn
-        
+        password: lesm1serab1e       
     mvc:
         hiddenmethod:
             filter:
@@ -20,3 +22,6 @@ spring:
         view:
             prefix: /WEB-INF/jsp/
             suffix: .jsp
+
+mybatis:
+  mapper-locations: classpath:teamD/publicParking/search/mapper/*.xml

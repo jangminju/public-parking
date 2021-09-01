@@ -1,58 +1,57 @@
 package teamD.publicParking.search.Model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-
 import javax.validation.constraints.NotNull;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-@Entity
-@Data
-@Table(name = "seoul_parking")
+@ToString
+@Getter @Setter
 public class SearchEntity {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@NotNull
-	private String parking_id;
+	private String parkingId;
 	@NotNull
-	private String parking_name;
+	private String parkingName;
 	@NotNull
-	private String parking_address;
+	private String parkingAddress;
 	
-	private String parking_phone;
+	private String parkingPhone;
 	
-	private String parking_vehicles;
+	private String parkingVehicles;
 	
-	private String parking_free;
+	private String parkingFree;
 	
-	private String start_time;
+	private String startTime;
 	
-	private String weekend_starttime;
+	private String weekendStarttime;
 	
-	private String weekend_endtime;
+	private String weekendEndtime;
 	
-	private String holiday_starttime;
+	private String holidayDtarttime;
 	
-	private String holiday_endtime;
+	private String holidayEndtime;
 	
-	private String saturday_free;
+	private String saturdayFree;
 	
-	private String parking_price;
+	private String parkingPrice;
 	
-	private String parking_time;
+	private String parkingTime;
 	
-	private String parking_addprice;
+	private String parkingAddprice;
 	
-	private String parking_addtime;
+	private String parkingAddtime;
 	
-	private String max_price;
+	private String maxPrice;
 	
-	private String parking_mapl;
+	private String parkingMapl;
 	
 	
 }
