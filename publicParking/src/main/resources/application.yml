@@ -1,9 +1,12 @@
 logging:
-    level:
-        org:
-            springframework:
-                web:
-                    filter: debug
+  level:
+    org:
+      springframework:
+        web:
+          filter: debug
+    teamD:
+      publicParking: debug
+    
 server:
     port: 8087
 spring:

@@ -45,6 +45,9 @@ public class SearchController {
 	
 	@GetMapping("/search")
 	public String parkingcon(@RequestParam String area, @RequestParam String address, Model model) {
+		
+
+		
 		log.info(">>>>>>> SearchController.parkingcon");
 		log.info("로깅 출력대야함 area, address = {}, {}", area, address);
 		// 화면에 표시되는 데이터를 가져오기 위함

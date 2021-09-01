@@ -25,6 +25,25 @@ public class SearchMybatisDaoImpl implements SearchMybatisDao {
 	
 	@Override
 	public List<SearchEntity> searchByCondition(String area, String address) {
+		
+		// 여기서 처리해줘야함 !!
+		/*
+		All 모두
+        New Village	공영주차장
+        Old Town 전기차 충전소
+        Modern City 게시판
+        */
+		
+		if(area.equals("All")) {
+        	area = "";
+        } else if (area.equals("Old Town")) {
+        	area = "전기차%충전소";
+        } else if (area.equals("Modern City")) {
+        	area = "게시판";
+        } else {
+        	throw new IllegalArgumentException("잘못된 인자입니다 : area = "+ area );
+        }
+		
 		return mapper.searchByCondition(area, address);
 	}
 }

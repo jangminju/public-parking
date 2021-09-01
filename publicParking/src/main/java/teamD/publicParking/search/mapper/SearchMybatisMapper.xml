@@ -29,20 +29,24 @@
   	</select>
   	
 	<select id="searchByCondition" resultMap="searchEntity">
+	
+	<!-- SELECT * FROM teamD.seoul_parking WHERE parking_name LIKE '%공영%주차장%' and parking_address like '%마포%' ;  -->
+	
 		SELECT
 		  parking_id
 		, parking_name
 		, parking_address
 		, parking_phone
 		FROM
-		study.seoul_parking parking_id
+		study.seoul_parking
 		<where>
 			<if test="area != null and area != '' ">
-			area like CONCAT('%', #{area}, '%')
+			parking_name like '%${area}%'
 			</if> 
 			<if test="address != null and address != '' ">
-			and address like CONCAT('%', #{address}, '%')
+			and parking_address like '%${address}%'
 			</if>
 		</where>
+		
   	</select>
 </mapper>
