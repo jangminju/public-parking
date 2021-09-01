@@ -27,17 +27,6 @@ public class BoardDto { //Controller와 Service사이에서 데이터 주고받�
 	private LocalDateTime modified_at;
 	private BoardType boardType;
 	
-	/*public BoardEntity toEntity() {
-		BoardEntity build = BoardEntity.builder()
-				.board_id(board_id)
-				.nickname(nickname)
-				.title(title)
-				.content(content)
-				.boardType(boardType)
-				.build();
-		return build;
-	}*/
-	
 	public BoardEntity toEntity() {
 		BoardEntity boardEntity = BoardEntity.builder()
 				.board_id(board_id)

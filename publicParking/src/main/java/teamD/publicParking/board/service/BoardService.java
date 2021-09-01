@@ -27,16 +27,6 @@ public class BoardService {
 		private static final int BLOCK_PAGE_NUM_COUNT = 5; //블럭에 존재하는 페이지 수
 		private static final int PAGE_POST_COUNT = 10; //한 페이지에 존재하는 게시글 수
 		
-		/*public BoardService(BoardRepository boardRepository){
-			this.boardRepository = boardRepository;
-		}*/
-		
-		/*페이징 처리된 게시글 리스트 반환
-		public Page<Board> findBoardList(Pageable pageable){
-			pageable = PageRequest.of(pageable.getPageNumber() <= 0 ? 0 : pageable.getPageNumber() -1, pageable.getPageSize());
-			return boardRepository.findAll(pageable);
-		}*/
-		
 		@Transactional
 		public Long savePost (BoardDto boardDto) {
 			return boardRepository.save(boardDto.toEntity()).getBoard_id();
