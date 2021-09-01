@@ -11,16 +11,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import lombok.AllArgsConstructor;
 import teamD.publicParking.board.dto.BoardDto;
 import teamD.publicParking.board.service.BoardService;
 
 @Controller //Http 요청이 진입하는 지점
+@AllArgsConstructor
 public class BoardController {
 		private BoardService boardService;
-		
-		public BoardController(BoardService boardService) {
-			this.boardService = boardService;
-		}
 		
 		@GetMapping("/")
 		public String list(Model model, @RequestParam(value = "page", defaultValue = "1") Integer pageNum) { //가져온 getBoard 데이터를 model을 통해 view에 전달
