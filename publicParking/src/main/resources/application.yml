@@ -12,6 +12,7 @@ spring:
         password: lesm1serab1e
         url: jdbc:mysql://relearn.cqaoehsuwhpj.ap-northeast-2.rds.amazonaws.com:3306/study
         username: relearn
+        
     mvc:
         hiddenmethod:
             filter:

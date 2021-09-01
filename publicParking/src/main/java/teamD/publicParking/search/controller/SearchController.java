@@ -41,7 +41,7 @@ public class SearchController {
 	@GetMapping("/search")
 	public String parkingcon(@RequestParam(name="parking_id") String parking_id , Model model) {
 		log.debug("SearchController.search");
-		// 화면에 표시되는 직원데이터를 가져오기 위함
+		// 화면에 표시되는 데이터를 가져오기 위함
 		List<SearchEntity> parkinglist = parkingRepository.select();
 		model.addAttribute("parkinglist", parkinglist);
 		return "/index";
@@ -59,7 +59,7 @@ public class SearchController {
 		
 		model.addAttribute("data", foo);
 		
-		return "/imJustWannaDataBinding";
+		return "/searchDataBinding";
 	}
 	
 	@GetMapping("/just-data")
@@ -80,7 +80,7 @@ public class SearchController {
 		log.debug("wanaDataJpa");
 		List<SeoulParking> parkings = searchForJpaRepository.findAll();
 		log.debug("parkinglist = {}", parkings);
-		return "/imJustWannaDataBinding";
+		return "/searchDataBinding";
 	}
 	
 	//findOne
@@ -91,7 +91,7 @@ public class SearchController {
 		SeoulParking parking = searchForJpaRepository.findOne();
 		model.addAttribute("data", parking);
 		log.debug("parkinglist = {}", parking);
-		return "/imJustWannaDataBindingOne";
+		return "/searchDataBindingOne";
 	}
 	
 }
