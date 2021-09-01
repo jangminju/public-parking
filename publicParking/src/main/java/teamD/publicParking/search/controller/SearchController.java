@@ -18,16 +18,16 @@ import teamD.publicParking.search.repository.SearchMybatisDao;
 
 @Controller
 @Slf4j
-@RequestMapping("/se")
+@RequestMapping("/search")
 public class SearchController {
 	
-	// @Autowired
-	//SearchJpaRepository parkingRepository;
+	@Autowired
+	SearchForJpaRepository parkingRepositoryJpa;
 	
 	@Autowired
 	SearchMybatisDao parkingRepository;
 	
-	@GetMapping({"/index", "/home"})
+	@GetMapping({"/index", "/"})
 	public String home(Model model) {
 		log.debug("log SearchController.foo");
 		List<SearchEntity> parkinglist = parkingRepository.select();
@@ -37,9 +37,26 @@ public class SearchController {
 		return "/index";
 	}
 	
-	// @RequestMapping(value="/", method = RequestMethod.GET)
+	/**
+	 * 파라미터를 받아서 목록을 찾은 후에 /index 화면에 재전송합니다
+	 * 예시:
+	 * ?area=New+Village&address=대림
+	 */
+	
 	@GetMapping("/search")
-	public String parkingcon(@RequestParam(name="parking_id") String parking_id , Model model) {
+	public String parkingcon(@RequestParam String area, @RequestParam String address, Model model) {
+		log.info(">>>>>>> SearchController.parkingcon");
+		log.info("로깅 출력대야함 area, address = {}, {}", area, address);
+		// 화면에 표시되는 데이터를 가져오기 위함
+//		List<SearchEntity> parkinglist = parkingRepository.select();
+		List<SearchEntity> parkinglist = parkingRepository.searchByCondition(area, address);
+		model.addAttribute("parkinglist", parkinglist);
+		return "/listing";
+	}
+	
+	// 밑에 부분 보류
+	// @RequestMapping(value="/", method = RequestMethod.GET)
+	public String parkingcon_보류(@RequestParam(name="parking_id") String parking_id , Model model) {
 		log.debug("SearchController.search");
 		// 화면에 표시되는 데이터를 가져오기 위함
 		List<SearchEntity> parkinglist = parkingRepository.select();
