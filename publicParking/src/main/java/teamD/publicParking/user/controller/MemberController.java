@@ -60,9 +60,9 @@ public class MemberController {
     }
 
     // 내 정보 페이지
-    @GetMapping("/user/info")
+    @GetMapping("/user/mypage")
     public String dispMyInfo() {
-        return "/myinfo";
+        return "/mypage";
     }
 
     // 어드민 페이지
