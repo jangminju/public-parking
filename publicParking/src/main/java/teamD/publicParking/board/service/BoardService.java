@@ -36,7 +36,7 @@ public class BoardService {
 		public List<BoardDto> getBoardList(Integer pageNum){ //게시물의 목록을 가져온다.
 			Page<BoardEntity> page = boardRepository
 					.findAll(PageRequest
-							.of(pageNum-1, PAGE_POST_COUNT, Sort.by(Sort.Direction.ASC,"createdDate")));
+							.of(pageNum-1, PAGE_POST_COUNT, Sort.by(Sort.Direction.DESC,"createdDate")));
 			
 			//List<Board> boardList = boardRepository.findAll();
 			List<BoardEntity> boardEntities = page.getContent();
