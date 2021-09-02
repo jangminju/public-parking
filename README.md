@@ -13,8 +13,8 @@
 ## :computer:Environment
 * Java JDK 11
 * STS
-* Spring boot 2.5.4 /Maven / Spring Data JPA / Spring Security
 * Spring boot /Maven / Spring Data JPA / Spring Security
+* HTML5 / CSS3/ javascript / Bootstrap / jQuery / Thymeleaf
 * MySQL
 * Tomcat 9.0
 
