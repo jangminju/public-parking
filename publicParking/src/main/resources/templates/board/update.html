@@ -51,7 +51,7 @@
   </div>
 
 <div class="container" style="margin-top: 50px;">
-	<form th:action="@{'/post/edit/' + ${post.board_id}}" method="post">
+	<form th:action="@{'/board/post/edit/' + ${post.board_id}}" method="post">
 	    <input type="hidden" name="_method" value="put"/>
 	    <input type="hidden" name="id" th:value="${post.board_id}"/>
 	
