@@ -24,7 +24,7 @@ public class BoardController {
 			this.boardService = boardService;
 		}
 		
-		@GetMapping("/")
+		@GetMapping("")
 		public String list(Model model, @RequestParam(value = "page", defaultValue = "1") Integer pageNum) { //가져온 getBoard 데이터를 model을 통해 view에 전달
 			List<BoardDto> boardDtoList = boardService.getBoardList(pageNum);
 			Integer[] pageList = boardService.getPageList(pageNum);
