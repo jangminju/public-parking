@@ -1,4 +1,4 @@
-zlogging:
+logging:
   level:
     org:
       springframework:
@@ -11,10 +11,10 @@ server:
     port: 8087
 spring:
     datasource:
-        url: jdbc:mysql://relearn.cqaoehsuwhpj.ap-northeast-2.rds.amazonaws.com:3306/study
         driver-class-name: com.mysql.cj.jdbc.Driver
-        username: relearn
-        password: lesm1serab1e       
+        url: jdbc:mysql://seowondb.cvlcopnaldp3.ap-northeast-2.rds.amazonaws.com:3306/parking
+        username: admin
+        password: dltmdgus1   
     mvc:
         hiddenmethod:
             filter:
