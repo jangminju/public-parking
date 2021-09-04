@@ -37,6 +37,9 @@
 		, parking_name
 		, parking_address
 		, parking_phone
+		, parking_vehicles
+		, parking_free
+		, parking_price
 		FROM
 		study.seoul_parking
 		<where>

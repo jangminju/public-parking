@@ -1,4 +1,4 @@
-logging:
+zlogging:
   level:
     org:
       springframework:
