@@ -24,7 +24,7 @@
 		, parking_free
 		, parking_price
 	FROM
-	study.seoul_parking parking_id
+	teamD.seoul_parking parking_id
 	LIMIT 20
   	</select>
   	
@@ -41,7 +41,7 @@
 		, parking_free
 		, parking_price
 		FROM
-		study.seoul_parking
+		teamD.seoul_parking
 		<where>
 			<if test="area != null and area != '' ">
 			parking_name like '%${area}%'
