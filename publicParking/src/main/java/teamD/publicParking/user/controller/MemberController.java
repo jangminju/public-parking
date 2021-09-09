@@ -32,7 +32,7 @@ public class MemberController {
     public String execSignup(MemberDto memberDto) {
         memberService.joinUser(memberDto);
 
-        return "redirect:/user/login";
+        return "redirect:/member/user/login";
     }
 
     // 로그인 페이지
