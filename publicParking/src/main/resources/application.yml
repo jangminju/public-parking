@@ -12,9 +12,9 @@ server:
 spring:
     datasource:
         driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://seowondb.cvlcopnaldp3.ap-northeast-2.rds.amazonaws.com:3306/parking
+        url: jdbc:mysql://minyoungdb.c9trnlmukdex.ap-northeast-2.rds.amazonaws.com/teamD
         username: admin
-        password: dltmdgus1   
+        password: 
     mvc:
         hiddenmethod:
             filter:
